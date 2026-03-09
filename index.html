@@ -4,30 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hudson Crypto Insights | Secure Bitcoin Investing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        body { background-color: #0d1117; color: #ffffff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
-        .container { max-width: 600px; width: 100%; padding: 40px 20px; border: 1px solid #30363d; border-radius: 16px; background: #161b22; box-shadow: 0 10px 40px rgba(0,0,0,0.6); margin-bottom: 40px; text-align: center; }
-        h1 { color: #f0b90b; margin-bottom: 10px; }
-        p { color: #8b949e; margin-bottom: 30px; }
+        body { background-color: #0d1117; color: #ffffff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; overflow-x: hidden; }
         
-        /* Form Styling */
-        .contact-form { text-align: left; margin-top: 30px; border-top: 1px solid #30363d; padding-top: 30px; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; color: #f0b90b; font-size: 0.8rem; text-transform: uppercase; font-weight: bold; }
-        input, textarea { width: 100%; padding: 12px; background: #0d1117; border: 1px solid #30363d; border-radius: 8px; color: white; box-sizing: border-box; font-size: 1rem; }
-        input:focus, textarea:focus { border-color: #f0b90b; outline: none; }
-        
-        .btn { width: 100%; padding: 16px; background-color: #f0b90b; color: #000; border: none; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 1.1rem; transition: 0.3s; margin-top: 10px; }
-        .btn:hover { background-color: #d4a30a; transform: scale(1.02); }
+        /* 1. BONUS TICKER (Top) */
+        .bonus-ticker { width: 100%; background: #f0b90b; color: #000; padding: 12px 0; font-weight: 900; position: fixed; top: 0; z-index: 1001; text-decoration: none; display: block; box-shadow: 0 4px 15px rgba(240, 185, 11, 0.3); }
+        .ticker-text { display: flex; white-space: nowrap; animation: ticker 25s linear infinite; }
+        .ticker-text span { padding: 0 50px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; }
+        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-        .price-widget { margin: 20px auto; border-radius: 10px; overflow: hidden; }
+        /* 2. MAIN CONTAINER */
+        .container { max-width: 600px; width: 90%; padding: 40px 20px; border: 1px solid #30363d; border-radius: 20px; background: #161b22; box-shadow: 0 15px 50px rgba(0,0,0,0.7); margin-top: 100px; margin-bottom: 40px; text-align: center; }
+        
+        .logo-placeholder { font-size: 3rem; color: #f0b90b; margin-bottom: 10px; }
+        h1 { color: #f0b90b; font-size: 2.2rem; margin-bottom: 5px; margin-top: 10px; }
+        .subtitle { color: #8b949e; margin-bottom: 30px; font-size: 1.1rem; }
+
+        /* 3. PRICE WIDGET */
+        .price-widget { margin: 20px auto; border-radius: 12px; overflow: hidden; border: 1px solid #30363d; background: #0d1117; }
+
+        /* 4. CONTACT FORM */
+        .contact-form { text-align: left; margin-top: 30px; border-top: 1px solid #30363d; padding-top: 30px; }
+        label { display: block; margin-bottom: 8px; color: #f0b90b; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
+        input { width: 100%; padding: 14px; background: #0d1117; border: 1px solid #30363d; border-radius: 10px; color: white; box-sizing: border-box; margin-bottom: 20px; font-size: 1rem; }
+        input:focus { border-color: #f0b90b; outline: none; }
+        
+        .btn { width: 100%; padding: 16px; background-color: #f0b90b; color: #000; border: none; font-weight: 900; border-radius: 10px; cursor: pointer; font-size: 1.1rem; text-transform: uppercase; transition: 0.3s; }
+        .btn:hover { background-color: #d4a30a; transform: translateY(-2px); }
+        #result { margin-top: 15px; font-weight: bold; text-align: center; min-height: 24px; }
+
+        /* 5. DIRECT CONTACT BUTTONS */
+        .direct-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 30px; }
+        .contact-pill { display: flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; color: white; }
+        .tg { background: #0088cc; }
+        .wa { background: #25d366; }
+        .mail { background: #30363d; }
+        .contact-pill:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+        footer { margin-top: auto; text-align: center; padding: 30px; width: 100%; color: #484f58; font-size: 0.8rem; border-top: 1px solid #30363d; }
     </style>
 </head>
 <body>
 
+    <a href="https://wa.me/message/YUJKAY32O4PVA1?text=Hello%20I%20want%20to%20claim%20my%20Bitcoin%20bonus!" class="bonus-ticker">
+        <div class="ticker-text">
+            <span>🎁 LIMITED TIME: CLICK HERE TO CLAIM YOUR DEPOSIT BONUS ON WHATSAPP!</span>
+            <span>🚀 START INVESTING TODAY AND EARN AN EXTRA 5% ON YOUR FIRST DEPOSIT</span>
+            <span>🎁 LIMITED TIME: CLICK HERE TO CLAIM YOUR DEPOSIT BONUS ON WHATSAPP!</span>
+            <span>🚀 START INVESTING TODAY AND EARN AN EXTRA 5% ON YOUR FIRST DEPOSIT</span>
+        </div>
+    </a>
+
     <div class="container">
+        <div class="logo-placeholder"><i class="fa-solid fa-building-shield"></i></div>
         <h1>Hudson Crypto Insights</h1>
-        <p>Sophisticated Bitcoin management with institutional-grade security.</p>
+        <p class="subtitle">Secure Bitcoin accumulation and institutional-grade portfolio management.</p>
 
         <div class="price-widget">
             <script src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"></script>
@@ -35,28 +67,67 @@
         </div>
 
         <div class="contact-form">
-            <h2 style="text-align: center; margin-bottom: 20px;">Open an Account</h2>
-            <form action="https://api.web3forms.com/submit" method="POST">
-                
+            <h2 style="text-align: center; margin-bottom: 25px;">Consult an Expert</h2>
+            <form id="form">
                 <input type="hidden" name="access_key" value="d4dcf6f5-421a-46e7-ab59-bb701ea28caf">
                 
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" name="name" required placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" name="email" required placeholder="your@email.com">
-                </div>
-                <div class="form-group">
-                    <label>Investment Portfolio Size</label>
-                    <input type="text" name="portfolio" placeholder="e.g. $10k - $50k">
-                </div>
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="Name" required>
                 
-                <button type="submit" class="btn">Send Request</button>
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="Email" required>
+                
+                <button type="submit" class="btn">Submit Request</button>
+                <div id="result"></div>
             </form>
+        </div>
+
+        <div class="direct-contact">
+            <a href="https://t.me/+7Ii5oALBhpIyNzY8" class="contact-pill tg" target="_blank">
+                <i class="fa-brands fa-telegram"></i> Telegram
+            </a>
+            <a href="https://wa.me/message/YUJKAY32O4PVA1" class="contact-pill wa" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="mailto:willhudsonn406@gmail.com" class="contact-pill mail">
+                <i class="fa-regular fa-envelope"></i> Email
+            </a>
         </div>
     </div>
 
+    <footer>&copy; 2026 Hudson Crypto Insights. All rights reserved.</footer>
+
+    <script>
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.style.color = "#8b949e";
+            result.innerHTML = "Processing...";
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: json
+            })
+            .then(async (response) => {
+                if (response.status == 200) {
+                    result.style.color = "#4caf50";
+                    result.innerHTML = "Success! Our team will contact you within 24 hours.";
+                    form.reset();
+                } else {
+                    result.style.color = "#ff4d4d";
+                    result.innerHTML = "Something went wrong. Please try again.";
+                }
+            })
+            .catch(error => {
+                result.innerHTML = "Something went wrong!";
+            });
+        });
+    </script>
 </body>
 </html>
