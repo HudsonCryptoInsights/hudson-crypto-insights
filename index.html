@@ -8,78 +8,73 @@
     <style>
         body { background-color: #0d1117; color: #ffffff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; overflow-x: hidden; }
         
-        /* 1. BONUS TICKER (Top) */
-        .bonus-ticker { width: 100%; background: #f0b90b; color: #000; padding: 12px 0; font-weight: 900; position: fixed; top: 0; z-index: 1001; text-decoration: none; display: block; box-shadow: 0 4px 15px rgba(240, 185, 11, 0.3); }
+        /* 110% BONUS TICKER */
+        .bonus-ticker { width: 100%; background: #f0b90b; color: #000; padding: 12px 0; font-weight: 900; position: fixed; top: 0; z-index: 1001; text-decoration: none; display: block; box-shadow: 0 4px 15px rgba(240, 185, 11, 0.4); }
         .ticker-text { display: flex; white-space: nowrap; animation: ticker 25s linear infinite; }
-        .ticker-text span { padding: 0 50px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; }
+        .ticker-text span { padding: 0 50px; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 2px; }
         @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-        /* 2. MAIN CONTAINER */
         .container { max-width: 600px; width: 90%; padding: 40px 20px; border: 1px solid #30363d; border-radius: 20px; background: #161b22; box-shadow: 0 15px 50px rgba(0,0,0,0.7); margin-top: 100px; margin-bottom: 40px; text-align: center; }
-        
-        .logo-placeholder { font-size: 3rem; color: #f0b90b; margin-bottom: 10px; }
-        h1 { color: #f0b90b; font-size: 2.2rem; margin-bottom: 5px; margin-top: 10px; }
+        .logo-placeholder { font-size: 3.5rem; color: #f0b90b; margin-bottom: 10px; }
+        h1 { color: #f0b90b; font-size: 2.2rem; margin-bottom: 5px; }
         .subtitle { color: #8b949e; margin-bottom: 30px; font-size: 1.1rem; }
 
-        /* 3. PRICE WIDGET */
         .price-widget { margin: 20px auto; border-radius: 12px; overflow: hidden; border: 1px solid #30363d; background: #0d1117; }
 
-        /* 4. CONTACT FORM */
-        .contact-form { text-align: left; margin-top: 30px; border-top: 1px solid #30363d; padding-top: 30px; }
-        label { display: block; margin-bottom: 8px; color: #f0b90b; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
-        input { width: 100%; padding: 14px; background: #0d1117; border: 1px solid #30363d; border-radius: 10px; color: white; box-sizing: border-box; margin-bottom: 20px; font-size: 1rem; }
-        input:focus { border-color: #f0b90b; outline: none; }
-        
-        .btn { width: 100%; padding: 16px; background-color: #f0b90b; color: #000; border: none; font-weight: 900; border-radius: 10px; cursor: pointer; font-size: 1.1rem; text-transform: uppercase; transition: 0.3s; }
-        .btn:hover { background-color: #d4a30a; transform: translateY(-2px); }
-        #result { margin-top: 15px; font-weight: bold; text-align: center; min-height: 24px; }
+        /* SOCIAL LOGIN SECTION */
+        .social-login-box { margin-top: 30px; padding-top: 20px; border-top: 1px solid #30363d; }
+        .social-title { color: #f0b90b; font-weight: bold; margin-bottom: 15px; font-size: 1rem; text-transform: uppercase; }
+        .social-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-bottom: 12px; transition: 0.3s; font-size: 0.95rem; border: none; cursor: pointer; cursor: pointer;}
+        .fb { background-color: #1877F2; color: white; }
+        .ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; }
+        .social-btn:hover { opacity: 0.9; transform: scale(1.02); }
+        #verify-msg { font-size: 0.85rem; color: #f0b90b; margin-top: 10px; font-weight: bold; }
 
-        /* 5. DIRECT CONTACT BUTTONS */
+        /* LIVE PAYOUT POPUP */
+        #payout-popup { position: fixed; bottom: 20px; left: 20px; background: #1c2128; border: 1px solid #f0b90b; border-radius: 12px; padding: 15px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: translateY(150%); transition: 0.5s ease-in-out; z-index: 9999; max-width: 250px; }
+        #payout-popup.show { transform: translateY(0); }
+        .payout-icon { background: #f0b90b; color: #000; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .payout-info { font-size: 0.8rem; text-align: left; }
+        .payout-name { font-weight: bold; color: #fff; display: block; }
+        .payout-amount { color: #f0b90b; font-weight: bold; }
+
+        /* CONTACT BUTTONS */
         .direct-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 30px; }
         .contact-pill { display: flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; color: white; }
         .tg { background: #0088cc; }
         .wa { background: #25d366; }
-        .mail { background: #30363d; }
-        .contact-pill:hover { transform: scale(1.05); filter: brightness(1.1); }
 
         footer { margin-top: auto; text-align: center; padding: 30px; width: 100%; color: #484f58; font-size: 0.8rem; border-top: 1px solid #30363d; }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/message/YUJKAY32O4PVA1?text=Hello%20I%20want%20to%20claim%20my%20Bitcoin%20bonus!" class="bonus-ticker">
+    <a href="https://wa.me/message/YUJKAY32O4PVA1?text=Hello!%20I%20want%20to%20claim%20my%20110%25%20NEW%20INVESTOR%20BONUS!" class="bonus-ticker">
         <div class="ticker-text">
-            <span>🎁 LIMITED TIME: CLICK HERE TO CLAIM YOUR DEPOSIT BONUS ON WHATSAPP!</span>
-            <span>🚀 START INVESTING TODAY AND EARN AN EXTRA 5% ON YOUR FIRST DEPOSIT</span>
-            <span>🎁 LIMITED TIME: CLICK HERE TO CLAIM YOUR DEPOSIT BONUS ON WHATSAPP!</span>
-            <span>🚀 START INVESTING TODAY AND EARN AN EXTRA 5% ON YOUR FIRST DEPOSIT</span>
+            <span>🎁 EXCLUSIVE: CLAIM YOUR 110% NEW INVESTOR DEPOSIT BONUS NOW!</span>
+            <span>🚀 HUDSON CRYPTO: 110% ACCUMULATION CREDIT FOR ALL NEW ACCOUNTS</span>
         </div>
     </a>
 
     <div class="container">
         <div class="logo-placeholder"><i class="fa-solid fa-building-shield"></i></div>
         <h1>Hudson Crypto Insights</h1>
-        <p class="subtitle">Secure Bitcoin accumulation and institutional-grade portfolio management.</p>
+        <p class="subtitle">Institutional-grade Bitcoin management and global market analytics.</p>
 
         <div class="price-widget">
             <script src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"></script>
             <gecko-coin-price-chart-widget coin-id="bitcoin" currency="usd" height="300" locale="en" theme="dark"></gecko-coin-price-chart-widget>
         </div>
 
-        <div class="contact-form">
-            <h2 style="text-align: center; margin-bottom: 25px;">Consult an Expert</h2>
-            <form id="form">
-                <input type="hidden" name="access_key" value="d4dcf6f5-421a-46e7-ab59-bb701ea28caf">
-                
-                <label>Full Name</label>
-                <input type="text" name="name" placeholder="Name" required>
-                
-                <label>Email Address</label>
-                <input type="email" name="email" placeholder="Email" required>
-                
-                <button type="submit" class="btn">Submit Request</button>
-                <div id="result"></div>
-            </form>
+        <div class="social-login-box">
+            <p class="social-title">Quick Claim: Claim Free $50 Bitcoins</p>
+            <button onclick="startVerification('Facebook')" class="social-btn fb" id="fb-btn">
+                <i class="fa-brands fa-facebook"></i> Login with Facebook
+            </button>
+            <button onclick="startVerification('Instagram')" class="social-btn ig" id="ig-btn">
+                <i class="fa-brands fa-instagram"></i> Login with Instagram
+            </button>
+            <p id="verify-msg" style="display: none;"><i class="fas fa-spinner fa-spin"></i> Connecting to Secure Server...</p>
         </div>
 
         <div class="direct-contact">
@@ -89,45 +84,44 @@
             <a href="https://wa.me/message/YUJKAY32O4PVA1" class="contact-pill wa" target="_blank">
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp
             </a>
-            <a href="mailto:willhudsonn406@gmail.com" class="contact-pill mail">
-                <i class="fa-regular fa-envelope"></i> Email
-            </a>
         </div>
     </div>
 
-    <footer>&copy; 2026 Hudson Crypto Insights. All rights reserved.</footer>
+    <div id="payout-popup">
+        <div class="payout-icon">₿</div>
+        <div class="payout-info">
+            <span class="payout-name" id="p-name">Alex M.</span>
+            just claimed a <span class="payout-amount" id="p-amount">$50 BTC Bonus</span>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 Hudson Crypto Insights. Managed with security and transparency.</footer>
 
     <script>
-        const form = document.getElementById('form');
-        const result = document.getElementById('result');
+        // SOCIAL LOGIN SCRIPT
+        function startVerification(platform) {
+            document.getElementById('verify-msg').style.display = 'block';
+            setTimeout(() => {
+                window.location.href = "https://wa.me/message/YUJKAY32O4PVA1?text=I%20have%20verified%20my%20" + platform + "%20account.%20Please%20credit%20my%20$50%20Bitcoin%20bonus.";
+            }, 2500);
+        }
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-            result.style.color = "#8b949e";
-            result.innerHTML = "Processing...";
+        // LIVE PAYOUTS SCRIPT
+        const names = ["James K.", "Sarah L.", "Michael W.", "Fatima R.", "Robert P.", "Elena S.", "David O.", "Linda T."];
+        const amounts = ["$50 BTC Bonus", "110% Deposit Credit", "$50 BTC Bonus", "Strategy Reward"];
+        
+        function showPayout() {
+            const popup = document.getElementById('payout-popup');
+            document.getElementById('p-name').innerText = names[Math.floor(Math.random() * names.length)];
+            document.getElementById('p-amount').innerText = amounts[Math.floor(Math.random() * amounts.length)];
+            
+            popup.classList.add('show');
+            setTimeout(() => { popup.classList.remove('show'); }, 4000);
+        }
 
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: json
-            })
-            .then(async (response) => {
-                if (response.status == 200) {
-                    result.style.color = "#4caf50";
-                    result.innerHTML = "Success! Our team will contact you within 24 hours.";
-                    form.reset();
-                } else {
-                    result.style.color = "#ff4d4d";
-                    result.innerHTML = "Something went wrong. Please try again.";
-                }
-            })
-            .catch(error => {
-                result.innerHTML = "Something went wrong!";
-            });
-        });
+        // Run payout every 10 seconds
+        setInterval(showPayout, 10000);
+        setTimeout(showPayout, 3000); // Initial show
     </script>
 </body>
 </html>
