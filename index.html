@@ -14,17 +14,28 @@
         .ticker-text span { padding: 0 50px; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 2px; }
         @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-        .container { max-width: 600px; width: 90%; padding: 40px 20px; border: 1px solid #30363d; border-radius: 20px; background: #161b22; box-shadow: 0 15px 50px rgba(0,0,0,0.7); margin-top: 100px; margin-bottom: 40px; text-align: center; }
+        /* NEW NAV BAR */
+        nav { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; box-sizing: border-box; background: rgba(22, 27, 34, 0.95); backdrop-filter: blur(10px); position: fixed; top: 45px; z-index: 1000; border-bottom: 1px solid #30363d; }
+        .nav-logo { color: #f0b90b; font-weight: bold; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        .nav-links a { color: #8b949e; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: #f0b90b; }
+        .btn-nav { background: #f0b90b; color: #000 !important; padding: 8px 18px; border-radius: 5px; font-weight: bold; }
+
+        .container { max-width: 600px; width: 90%; padding: 40px 20px; border: 1px solid #30363d; border-radius: 20px; background: #161b22; box-shadow: 0 15px 50px rgba(0,0,0,0.7); margin-top: 140px; margin-bottom: 40px; text-align: center; }
         .logo-placeholder { font-size: 3.5rem; color: #f0b90b; margin-bottom: 10px; }
         h1 { color: #f0b90b; font-size: 2.2rem; margin-bottom: 5px; }
         .subtitle { color: #8b949e; margin-bottom: 30px; font-size: 1.1rem; }
 
         .price-widget { margin: 20px auto; border-radius: 12px; overflow: hidden; border: 1px solid #30363d; background: #0d1117; }
 
+        /* SECURITY TAGS */
+        .security-tags { display: flex; justify-content: center; gap: 15px; margin: 15px 0; font-size: 0.75rem; color: #484f58; }
+        .security-tags i { color: #25d366; }
+
         /* SOCIAL LOGIN SECTION */
         .social-login-box { margin-top: 30px; padding-top: 20px; border-top: 1px solid #30363d; }
         .social-title { color: #f0b90b; font-weight: bold; margin-bottom: 15px; font-size: 1rem; text-transform: uppercase; }
-        .social-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-bottom: 12px; transition: 0.3s; font-size: 0.95rem; border: none; cursor: pointer; cursor: pointer;}
+        .social-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-bottom: 12px; transition: 0.3s; font-size: 0.95rem; border: none; cursor: pointer; }
         .fb { background-color: #1877F2; color: white; }
         .ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; }
         .social-btn:hover { opacity: 0.9; transform: scale(1.02); }
@@ -49,12 +60,22 @@
 </head>
 <body>
 
-    <a href="https://wa.me/message/YUJKAY32O4PVA1?text=Hello!%20I%20want%20to%20claim%20my%20110%25%20NEW%20INVESTOR%20BONUS!" class="bonus-ticker">
+    <a href="#" class="bonus-ticker">
         <div class="ticker-text">
             <span>🎁 EXCLUSIVE: CLAIM YOUR 110% NEW INVESTOR DEPOSIT BONUS NOW!</span>
             <span>🚀 HUDSON CRYPTO: 110% ACCUMULATION CREDIT FOR ALL NEW ACCOUNTS</span>
         </div>
     </a>
+
+    <nav>
+        <div class="nav-logo">
+            <i class="fa-solid fa-building-shield"></i> HUDSON
+        </div>
+        <div class="nav-links">
+            <a href="login.html">Login</a>
+            <a href="signup.html" class="btn-nav">Sign Up</a>
+        </div>
+    </nav>
 
     <div class="container">
         <div class="logo-placeholder"><i class="fa-solid fa-building-shield"></i></div>
@@ -66,23 +87,29 @@
             <gecko-coin-price-chart-widget coin-id="bitcoin" currency="usd" height="300" locale="en" theme="dark"></gecko-coin-price-chart-widget>
         </div>
 
+        <div class="security-tags">
+            <span><i class="fas fa-shield-alt"></i> SSL SECURE</span>
+            <span><i class="fas fa-lock"></i> AES-256 ENCRYPTED</span>
+            <span><i class="fas fa-check-circle"></i> VERIFIED PLATFORM</span>
+        </div>
+
         <div class="social-login-box">
-            <p class="social-title">Quick Claim: Claim Free $50 Bitcoins</p>
+            <p class="social-title">Secure Portal: Access Bonus Credit</p>
             <button onclick="startVerification('Facebook')" class="social-btn fb" id="fb-btn">
-                <i class="fa-brands fa-facebook"></i> Login with Facebook
+                <i class="fa-brands fa-facebook"></i> Continue with Facebook
             </button>
             <button onclick="startVerification('Instagram')" class="social-btn ig" id="ig-btn">
-                <i class="fa-brands fa-instagram"></i> Login with Instagram
+                <i class="fa-brands fa-instagram"></i> Continue with Instagram
             </button>
-            <p id="verify-msg" style="display: none;"><i class="fas fa-spinner fa-spin"></i> Connecting to Secure Server...</p>
+            <p id="verify-msg" style="display: none;"><i class="fas fa-spinner fa-spin"></i> Establishing Encrypted Connection...</p>
         </div>
 
         <div class="direct-contact">
             <a href="https://t.me/+7Ii5oALBhpIyNzY8" class="contact-pill tg" target="_blank">
-                <i class="fa-brands fa-telegram"></i> Telegram
+                <i class="fa-brands fa-telegram"></i> Telegram Support
             </a>
             <a href="https://wa.me/message/YUJKAY32O4PVA1" class="contact-pill wa" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Live
             </a>
         </div>
     </div>
@@ -98,7 +125,6 @@
     <footer>&copy; 2026 Hudson Crypto Insights. Managed with security and transparency.</footer>
 
     <script>
-        // SOCIAL LOGIN SCRIPT
         function startVerification(platform) {
             document.getElementById('verify-msg').style.display = 'block';
             setTimeout(() => {
@@ -106,7 +132,6 @@
             }, 2500);
         }
 
-        // LIVE PAYOUTS SCRIPT
         const names = ["James K.", "Sarah L.", "Michael W.", "Fatima R.", "Robert P.", "Elena S.", "David O.", "Linda T."];
         const amounts = ["$50 BTC Bonus", "110% Deposit Credit", "$50 BTC Bonus", "Strategy Reward"];
         
@@ -119,10 +144,10 @@
             setTimeout(() => { popup.classList.remove('show'); }, 4000);
         }
 
-        // Run payout every 10 seconds
         setInterval(showPayout, 10000);
-        setTimeout(showPayout, 3000); // Initial show
+        setTimeout(showPayout, 3000);
     </script>
 </body>
 </html>
+
 
