@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Hudson Crypto Insights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root { --bg: #0d1117; --card: #161b22; --accent: #f0b90b; --border: #30363d; --text-dim: #8b949e; }
+        body { background-color: var(--bg); color: #ffffff; font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; }
+        
+        /* SIDEBAR */
+        .sidebar { width: 240px; height: 100vh; background: var(--card); border-right: 1px solid var(--border); padding: 20px; position: fixed; }
+        .side-logo { color: var(--accent); font-weight: bold; font-size: 1.4rem; margin-bottom: 40px; display: flex; align-items: center; gap: 10px; }
+        .nav-item { display: flex; align-items: center; gap: 15px; padding: 12px; color: var(--text-dim); text-decoration: none; border-radius: 8px; margin-bottom: 5px; transition: 0.3s; }
+        .nav-item:hover, .nav-item.active { background: rgba(240, 185, 11, 0.1); color: var(--accent); }
+
+        /* MAIN CONTENT */
+        .main-content { margin-left: 240px; padding: 40px; width: 100%; max-width: 1200px; }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .user-badge { background: var(--card); padding: 8px 15px; border-radius: 50px; border: 1px solid var(--border); font-size: 0.9rem; }
+
+        /* DASHBOARD CARDS */
+        .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 15px; padding: 25px; }
+        
+        .balance-title { color: var(--text-dim); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .balance-amount { font-size: 2.5rem; font-weight: bold; margin: 10px 0; color: var(--accent); }
+        .bonus-tag { background: rgba(37, 211, 102, 0.2); color: #25d366; padding: 4px 10px; border-radius: 5px; font-size: 0.8rem; }
+
+        .btn-action { background: var(--accent); color: #000; border: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 20px; transition: 0.3s; }
+        .btn-action:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* RECENT ACTIVITY TABLE */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th { text-align: left; color: var(--text-dim); font-size: 0.8rem; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+        td { padding: 15px 0; border-bottom: 1px solid rgba(48, 54, 61, 0.5); font-size: 0.9rem; }
+        .status-pill { padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+        .completed { background: rgba(37, 211, 102, 0.1); color: #25d366; }
+
+        @media (max-width: 768px) {
+            .sidebar { display: none; }
+            .main-content { margin-left: 0; padding: 20px; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="side-logo"><i class="fa-solid fa-building-shield"></i> HUDSON</div>
+        <a href="#" class="nav-item active"><i class="fas fa-chart-line"></i> Overview</a>
+        <a href="deposit.html" class="nav-item"><i class="fas fa-wallet"></i> Deposit</a>
+        <a href="#" class="nav-item"><i class="fas fa-exchange-alt"></i> Withdraw</a>
+        <a href="#" class="nav-item"><i class="fas fa-history"></i> History</a>
+        <a href="#" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+        <a href="index.html" class="nav-item" style="margin-top: 50px; color: #ff4d4d;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div class="header-flex">
+            <div>
+                <h2 style="margin:0;">Portfolio Overview</h2>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Welcome back to your secure terminal.</p>
+            </div>
+            <div class="user-badge"><i class="fas fa-user-check" style="color:var(--accent)"></i> Verified Investor</div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <span class="balance-title">Total Account Value</span>
+                <div class="balance-amount">$50.00 <span class="bonus-tag">ACTIVE BONUS</span></div>
+                <p style="color: var(--text-dim); font-size: 0.85rem;">Profit/Loss (24h): <span style="color: #25d366;">+4.32%</span></p>
+                
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn-action" onclick="location.href='deposit.html'">Add Funds</button>
+                    <button class="btn-action" style="background: transparent; border: 1px solid var(--border); color: white;">Withdraw</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="balance-title">Market Status</span>
+                <div style="margin-top:15px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                        <span>Bitcoin</span>
+                        <span style="color:var(--accent)">Live</span>
+                    </div>
+                    <div style="height: 5px; background: #30363d; border-radius: 10px;">
+                        <div style="width: 75%; height:100%; background: var(--accent); border-radius: 10px;"></div>
+                    </div>
+                    <p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 10px;">Institutional accumulation is currently high.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 20px;">
+            <h3 style="margin-top:0;">Recent Activity</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TYPE</th>
+                        <th>AMOUNT</th>
+                        <th>DATE</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>System Bonus</td>
+                        <td style="color: #25d366;">+$50.00 BTC</td>
+                        <td>Today</td>
+                        <td><span class="status-pill completed">COMPLETED</span></td>
+                    </tr>
+                    <tr>
+                        <td>Identity Verification</td>
+                        <td>Level 1</td>
+                        <td>Yesterday</td>
+                        <td><span class="status-pill completed">VERIFIED</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
