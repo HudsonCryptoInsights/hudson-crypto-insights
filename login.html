@@ -109,10 +109,10 @@
             document.getElementById('submit-btn').style.display = 'none';
             document.getElementById('loader').style.display = 'block';
 
-            // Simulate a secure redirect to your dashboard
-            setTimeout(() => {
-                window.location.href = "index.html"; 
-            }, 2000);
+            // This tells the page: "After 2 seconds, send the user to the Dashboard"
+setTimeout(() => {
+    window.location.href = "dashboard.html"; 
+}, 2000);
         });
     </script>
 </body>
