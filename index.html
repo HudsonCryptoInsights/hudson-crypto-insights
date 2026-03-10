@@ -1,154 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hudson Crypto Insights</title>
-    <style>
-        /* Base Page Styles */
-        body {
-            background-color: #010409; /* Deep black/navy */
-            color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
-            padding: 20px;
-        }
+<title>Hudson Crypto Insights</title>
 
-        /* Top Promo Bar */
-        .promo-bar {
-            background-color: #f2bc1a;
-            color: #000;
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            font-weight: bold;
-            font-size: 14px;
-            position: fixed;
-            top: 0;
-            z-index: 100;
-        }
+<style>
 
-        /* Main Container Card */
-        .crypto-card {
-            background-color: #0d1117;
-            border: 1px solid #30363d;
-            border-radius: 20px;
-            padding: 30px;
-            width: 100%;
-            max-width: 400px;
-            margin-top: 60px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+body{
+font-family:Arial;
+margin:0;
+background:#0f172a;
+color:white;
+}
 
-        /* Icon and Titles */
-        .header-icon { font-size: 40px; margin-bottom: 10px; display: block; }
-        h1 { color: #f2bc1a; font-size: 24px; margin: 10px 0; }
-        .subtitle { color: #8b949e; font-size: 13px; margin-bottom: 20px; }
+header{
+background:#111827;
+padding:25px;
+text-align:center;
+}
 
-        /* Chart Area - Styled like your screenshot */
-        .chart-container {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 20px;
-            color: #000;
-        }
+nav{
+background:#1f2937;
+padding:12px;
+text-align:center;
+}
 
-        /* Quick Claim Text */
-        .quick-claim {
-            color: #f2bc1a;
-            font-weight: bold;
-            font-size: 12px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
 
-        /* Buttons */
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 14px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            color: white;
-            font-size: 15px;
-        }
+section{
+max-width:900px;
+margin:auto;
+padding:40px;
+}
 
-        .btn-fb { background-color: #1877f2; }
-        .btn-ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-        
-        .social-row { display: flex; gap: 10px; }
-        .btn-tg { background-color: #0088cc; flex: 1; }
-        .btn-wa { background-color: #25d366; flex: 1; }
+.card{
+background:#1f2937;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
 
-        /* Footer */
-        .footer-text {
-            color: #484f58;
-            font-size: 11px;
-            margin-top: 30px;
-            text-align: center;
-        }
+footer{
+background:#111827;
+padding:20px;
+text-align:center;
+}
 
-        /* Small Popup (Elena S.) */
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: #0d1117;
-            border: 1px solid #f2bc1a;
-            border-radius: 8px;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            font-size: 11px;
-            animation: slideIn 0.5s ease-out;
-        }
+</style>
 
-        @keyframes slideIn { from { transform: translateX(-100%); } to { transform: translateX(0); } }
-    </style>
 </head>
+
 <body>
 
-    <div class="promo-bar">CLAIM YOUR 110% NEW INVESTOR DEPOSIT BONUS NOW! 🚀</div>
+<header>
+<h1>Hudson Crypto Insights</h1>
+<p>Crypto Education • Bitcoin Insights • Digital Finance</p>
+</header>
 
-    <div class="crypto-card">
-        <span class="header-icon">🏢</span>
-        <h1>Hudson Crypto Insights</h1>
-        <p class="subtitle">Institutional-grade Bitcoin management and global market analytics.</p>
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Bitcoin</a>
+<a href="#">Contact</a>
+</nav>
 
-        <div class="chart-container">
-            <script src="https://widgets.coingecko.com/coingecko-coin-price-chart-widget.js"></script>
-            <coingecko-coin-price-chart-widget coin-id="bitcoin" currency="usd" height="300" locale="en"></coingecko-coin-price-chart-widget>
-        </div>
+<section>
 
-        <div class="quick-claim">QUICK CLAIM: CLAIM FREE $50 BITCOINS</div>
+<h2>Welcome</h2>
 
-        <button class="btn btn-fb">Login with Facebook</button>
-        <button class="btn btn-ig">Login with Instagram</button>
+<div class="card">
+<p>
+Welcome to Hudson Crypto Insights created by William Hudson.
+This website shares simple information about cryptocurrency,
+blockchain technology, and digital finance.
+</p>
+</div>
 
-        <div class="social-row">
-            <button class="btn btn-tg">Telegram</button>
-            <button class="btn btn-wa">WhatsApp</button>
-        </div>
-    </div>
+<h2>About</h2>
 
-    <p class="footer-text">© 2026 Hudson Crypto Insights. Managed with security and transparency.</p>
+<div class="card">
+<p>
+Hudson Crypto Insights was created to help people understand
+how cryptocurrency works and stay informed about the digital economy.
+</p>
+</div>
 
-    <div class="toast">
-        <div style="background:#f2bc1a; color:black; border-radius:50%; width:25px; height:25px; display:flex; align-items:center; justify-content:center; margin-right:10px; font-weight:bold;">B</div>
-        <div><strong>Elena S.</strong><br>just claimed a 110% Deposit Credit</div>
-    </div>
+<h2>Bitcoin Basics</h2>
+
+<div class="card">
+<ul>
+<li>What Bitcoin is</li>
+<li>How blockchain works</li>
+<li>Crypto wallets</li>
+<li>Understanding crypto risks</li>
+</ul>
+</div>
+
+<h2>Contact</h2>
+
+<div class="card">
+<p>Email: contact@hudsoncryptoinsights.com</p>
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Hudson Crypto Insights
+
+</footer>
 
 </body>
 </html>
-
